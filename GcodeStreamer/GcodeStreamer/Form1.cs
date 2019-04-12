@@ -27,6 +27,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 using System.IO.Ports;  // For SerialPorts
 
@@ -38,6 +39,7 @@ namespace GcodeStreamer
         {
             InitializeComponent();
             getavaialbleports();                            // Get ports when initialize
+            
         }
 
 
@@ -45,6 +47,7 @@ namespace GcodeStreamer
         {
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
+               
                 textBox1.Text = folderBrowserDialog1.SelectedPath;
             }
         }
@@ -86,12 +89,32 @@ namespace GcodeStreamer
         private void LoadFile_Click(object sender, EventArgs e)
         {
             // Show the dialog and get result.
+            openFileDialog1.Filter = "GCODE file (*.gcode)|*.gcode";                                // Showing .gcode files only
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK) // Test result.
             {
-                fileNameLabel.Text = openFileDialog1.FileName;
+                // fileNameLabel.Text = openFileDialog1.FileName;
+                
+                string fullPath = openFileDialog1.FileName;                                         // Showing files in the file dialog window (All files in the folder)                                     
+                string path = Path.GetFullPath(Path.Combine(openFileDialog1.FileName, @"..\"));     // A path to the folder 
+                string fileName = Path.GetFileName(fullPath);                                       // Name of the file
+               
+                //string format = ".jpg";                                                             // Default format is jpeg
+                string format = ".png";
+                string imageName = fileName.Substring(0,fileName.Length-6) + format;
+                string imagePath = path + "Images\\" + imageName;
+
                 // Get image by this file:
-               // pictureBox1.Image = Image.FromFile(openFileDialog1.FileName - ".gcde" + ".jpg");                                  // === ERROR! === Find how to get with this
+                try                                                                                 // Trying to find the picture
+                {
+                    pictureBox1.Image = Image.FromFile(imagePath);                                  // Printing the picture       
+                }catch(Exception ex)            
+                {
+                    fileNameLabel.Text = "  == ERROR: CAN'T OPEN IMAGE FILE! ==";                   // In case of exception print the message
+                    Console.WriteLine(" == ERROR: CAN'T OPEN IMAGE FILE! ==");
+                }
+                fileNameLabel.Text = imagePath;                                                      // Text on the label
+                Console.WriteLine(imagePath);
             }
             Console.WriteLine(result); // <-- For debugging use.
         }
@@ -117,6 +140,11 @@ namespace GcodeStreamer
             }
             pictureBox1.Image = flag;
             */
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
     }

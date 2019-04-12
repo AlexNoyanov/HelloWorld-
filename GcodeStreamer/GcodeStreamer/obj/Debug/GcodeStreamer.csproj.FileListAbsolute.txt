@@ -7,3 +7,12 @@ c:\users\alex\documents\visual studio 2015\Projects\GcodeStreamer\GcodeStreamer\
 c:\users\alex\documents\visual studio 2015\Projects\GcodeStreamer\GcodeStreamer\bin\Debug\GcodeStreamer.pdb
 c:\users\alex\documents\visual studio 2015\Projects\GcodeStreamer\GcodeStreamer\obj\Debug\GcodeStreamer.exe
 c:\users\alex\documents\visual studio 2015\Projects\GcodeStreamer\GcodeStreamer\obj\Debug\GcodeStreamer.pdb
+C:\Users\alex\Documents\Projects-AlexNoyanov-Git\GcodeStreamer\GcodeStreamer\bin\Debug\GcodeStreamer.exe.config
+C:\Users\alex\Documents\Projects-AlexNoyanov-Git\GcodeStreamer\GcodeStreamer\obj\Debug\GcodeStreamer.exe
+C:\Users\alex\Documents\Projects-AlexNoyanov-Git\GcodeStreamer\GcodeStreamer\obj\Debug\GcodeStreamer.pdb
+C:\Users\alex\Documents\Projects-AlexNoyanov-Git\GcodeStreamer\GcodeStreamer\bin\Debug\GcodeStreamer.exe
+C:\Users\alex\Documents\Projects-AlexNoyanov-Git\GcodeStreamer\GcodeStreamer\bin\Debug\GcodeStreamer.pdb
+C:\Users\alex\Documents\Projects-AlexNoyanov-Git\GcodeStreamer\GcodeStreamer\obj\Debug\GcodeStreamer.csprojResolveAssemblyReference.cache
+C:\Users\alex\Documents\Projects-AlexNoyanov-Git\GcodeStreamer\GcodeStreamer\obj\Debug\GcodeStreamer.Form1.resources
+C:\Users\alex\Documents\Projects-AlexNoyanov-Git\GcodeStreamer\GcodeStreamer\obj\Debug\GcodeStreamer.Properties.Resources.resources
+C:\Users\alex\Documents\Projects-AlexNoyanov-Git\GcodeStreamer\GcodeStreamer\obj\Debug\GcodeStreamer.csproj.GenerateResource.Cache

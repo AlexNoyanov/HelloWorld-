@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="302.36221"
+   height="302.36221"
+   viewBox="0 0 80 80"
+   version="1.1"
+   id="svg519"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="Alex-GithubLogo.svg">
+  <defs
+     id="defs513">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 40 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="80 : 40 : 1"
+       inkscape:persp3d-origin="40 : 26.666667 : 1"
+       id="perspective879" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.0488818"
+     inkscape:cx="541.73147"
+     inkscape:cy="84.997952"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1898"
+     inkscape:window-height="2049"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata516">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-217)">
+    <path
+       style="stroke-width:0.14820741"
+       d="m 120.1404,197.09341 h 47.55801 v 5.85863 H 120.1404 Z"
+       id="rect771"
+       inkscape:connector-curvature="0" />
+    <path
+       style="stroke-width:0.13930757"
+       d="m 128.34517,183.87441 h 5.66964 v 48.35715 h -5.66964 z"
+       id="rect773"
+       inkscape:connector-curvature="0" />
+    <path
+       style="stroke-width:0.1363304"
+       d="m 283.4791,403.59948 h 47.91797 v 6.80357 H 283.4791 Z"
+       id="rect777"
+       inkscape:connector-curvature="0" />
+    <path
+       style="stroke-width:0.10043625"
+       d="m 312.89851,366.85122 h 5.66961 v 53.97534 h -5.66961 z"
+       id="rect779"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke-width:0.16933332"
+       d=""
+       id="path980"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke-width:0.16933332"
+       d=""
+       id="path978"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke-width:0.16933332"
+       d=""
+       id="path976"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke-width:0.16933332"
+       d=""
+       id="path974"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke-width:0.16933332"
+       d=""
+       id="path972"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke-width:0.16933332"
+       d=""
+       id="path993"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke-width:0.16933334"
+       d=""
+       id="path1006"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;stroke-width:0.33501285"
+       d="m 193.65981,337.91871 v -11.89296 h 35.34386 35.34386 v 11.89296 11.89295 h -35.34386 -35.34386 z m 0,-46.7343 V 279.45896 H 181.93436 170.20892 V 267.566 255.67304 h 11.72544 11.72545 v -11.72545 -11.72544 h 35.34386 35.34386 v 11.72544 11.72545 h 11.72545 11.72544 v 11.89296 11.89296 h -11.72544 -11.72545 v 11.72545 11.72545 h -11.89295 -11.89296 v -11.72545 -11.72545 h -11.55795 -11.55794 v 11.72545 11.72545 h -11.89295 -11.89297 z"
+       id="path1162"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
