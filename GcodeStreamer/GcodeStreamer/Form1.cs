@@ -18,6 +18,7 @@
  */
 
 
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -99,7 +100,7 @@ namespace GcodeStreamer
                 string path = Path.GetFullPath(Path.Combine(openFileDialog1.FileName, @"..\"));     // A path to the folder 
                 string fileName = Path.GetFileName(fullPath);                                       // Name of the file
                
-                //string format = ".jpg";                                                             // Default format is jpeg
+                //string format = ".jpg";                                                           // Default format is jpeg
                 string format = ".png";
                 string imageName = fileName.Substring(0,fileName.Length-6) + format;
                 string imagePath = path + "Images\\" + imageName;
@@ -113,38 +114,89 @@ namespace GcodeStreamer
                     fileNameLabel.Text = "  == ERROR: CAN'T OPEN IMAGE FILE! ==";                   // In case of exception print the message
                     Console.WriteLine(" == ERROR: CAN'T OPEN IMAGE FILE! ==");
                 }
-                fileNameLabel.Text = imagePath;                                                      // Text on the label
+                fileNameLabel.Text = fullPath;                                                     // Text on the label
                 Console.WriteLine(imagePath);
             }
             Console.WriteLine(result); // <-- For debugging use.
+
+            // When file is choosed copying all data to the listbox to show it to user
+            // All strings now should be choosed from File_listBox:
+
+            List<string> fileStrings = new List<string>();                          // All strings from gcode file loading here
+
+            // Open the file to read from.
+            using (StreamReader sr = File.OpenText(fileNameLabel.Text))
+            {
+                string s;
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);                                           // Print it in the terminal
+                    fileStrings.Add(s);                                             // Add string to the list
+                    files_listBox.Items.Add(s);                                     // Adding new string to the listbox to show 
+                }
+            }
         }
 
         private void GoButton_Click(object sender, EventArgs e)
         {
+            // Check if serial port selected:
 
-            // Testing image loading:
-            /*
-            pictureBox1.Size = new Size(210, 110);
-            this.Controls.Add(pictureBox1);
+            DialogResult result;
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
 
-            Bitmap flag = new Bitmap(200, 100);
-            Graphics flagGraphics = Graphics.FromImage(flag);
-            int red = 0;
-            int white = 11;
-            while (white <= 100)
+            if (comboBox1.SelectedIndex == -1)
             {
-                flagGraphics.FillRectangle(Brushes.Red, 0, red, 200, 10);
-                flagGraphics.FillRectangle(Brushes.White, 0, white, 200, 10);
-                red += 20;
-                white += 20;
+                result = MessageBox.Show("Serial port not selected!", "ERROR", buttons);
             }
-            pictureBox1.Image = flag;
-            */
+            else
+            {
+                if (fileNameLabel.Text == "Please choose the file")
+                {
+                    result = MessageBox.Show("Please select the GCODE file", "ERROR", buttons);
+                }
+                else
+                {
+                    result = MessageBox.Show("Streaming started!", "Sucess", buttons);
 
+                    // And now when all possible problems solved the code
+                    //gCode_listBox.it
+
+
+                }
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)           
+        {
+           
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {                                     
+         
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)                          
+        {
+           
+        }
+
+        private void SendButton_Click(object sender, EventArgs e)                   // Send gcode button pressed
+        {
+            // fileNameLabel.Text = textBox1.Text;   // Send command to CNC by yourself
+            string yourCommand = textBox1.Text;      // Your command
+            string listCommand = "Your gcode command :" + yourCommand;
+            gCode_listBox.Items.Add(listCommand);    // Add your gcode command to the list of all commands in progress list
 
         }
     }
