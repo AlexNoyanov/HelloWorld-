@@ -36,11 +36,15 @@ namespace GcodeStreamer
 {
     public partial class Form1 : Form
     {
+
+        SerialPort arduinoCOM;                              // Arduino COM port
+
+
         public Form1()
         {
             InitializeComponent();
             getavaialbleports();                            // Get ports when initialize
-            
+                       
         }
 
 
@@ -59,9 +63,14 @@ namespace GcodeStreamer
             comboBox1.Items.AddRange(ports);
         }
 
-        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
-        {
 
+        string arduinoAnswer;
+
+        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)         // Serial port get some data
+        {
+            arduinoAnswer = arduinoCOM.ReadLine();
+            
+            gCode_listBox.Items.Add(arduinoAnswer);
         }
 
         private void serialPort1_PinChanged(object sender, System.IO.Ports.SerialPinChangedEventArgs e)
@@ -85,7 +94,6 @@ namespace GcodeStreamer
 
             Console.ReadLine();
         }
-
 
         private void LoadFile_Click(object sender, EventArgs e)
         {
@@ -137,6 +145,8 @@ namespace GcodeStreamer
             }
         }
 
+        bool pauseBool = false;                                                     // Pause bool is desabled and Pause button not clicked
+
         private void GoButton_Click(object sender, EventArgs e)
         {
             // Check if serial port selected:
@@ -161,7 +171,16 @@ namespace GcodeStreamer
                     // And now when all possible problems solved the code
                     //gCode_listBox.it
 
-
+                    foreach (string command in gCode_listBox.Items)
+                    {
+                        string currentCommand = command;
+                        if(pauseBool != true)                                                // Check if Pause or not
+                        {
+                            Console.WriteLine(command);
+                            arduinoCOM.Open();
+                            arduinoCOM.Write(command);
+                        }
+                    }
                 }
             }
         }
@@ -171,9 +190,16 @@ namespace GcodeStreamer
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        //bool portFlag = false;
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)         // If port is selected:
         {
-
+            if (comboBox1.SelectedItem.ToString() != "" /*&& portFlag == false*/)
+            {
+                arduinoCOM = new SerialPort(comboBox1.SelectedItem.ToString());         // Creating new port for Arduino
+                MessageBox.Show("CNC on port " + comboBox1.SelectedItem.ToString());
+                
+                //portFlag = true;
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)           
@@ -191,12 +217,58 @@ namespace GcodeStreamer
            
         }
 
+        int dataSpeed = 1000;                                                       // Delay between data requests
         private void SendButton_Click(object sender, EventArgs e)                   // Send gcode button pressed
         {
-            // fileNameLabel.Text = textBox1.Text;   // Send command to CNC by yourself
-            string yourCommand = textBox1.Text;      // Your command
-            string listCommand = "Your gcode command :" + yourCommand;
-            gCode_listBox.Items.Add(listCommand);    // Add your gcode command to the list of all commands in progress list
+            if (arduinoCOM == null)                                                 // If port is not selected
+            {
+                MessageBox.Show("Please select the port!");                         // Asking user to select it
+            }
+            else
+            {
+
+                // fileNameLabel.Text = textBox1.Text;   // Send command to CNC by yourself
+                string yourCommand = textBox1.Text;      // Your command
+
+                // Send this user's command to the CNC by serial port:
+                arduinoCOM.Open();
+                arduinoCOM.Write(yourCommand);
+                Console.Write(yourCommand);
+               // arduinoCOM.Close();
+           
+                string listCommand = "Your gcode command :" + yourCommand;
+
+                gCode_listBox.Items.Add(listCommand);    // Add your gcode command to the list of all commands in progress list
+
+                int dataCounter = 0;
+                int maxCounter = 10;
+
+                
+                while(arduinoAnswer == null)
+                {
+                    arduinoAnswer = arduinoCOM.ReadLine();
+                    //System.Threading.Thread.Sleep(dataSpeed);
+                    if(dataCounter > maxCounter)
+                    {
+                        Console.WriteLine(" === Error! OUT OF TIME ===");
+                        break;
+                    }
+                }
+                
+                arduinoCOM.Close();
+                gCode_listBox.Items.Add(arduinoAnswer); // Add arduino answer to the list of all commands
+            }
+        }
+
+        private void PauseClicked(object sender, EventArgs e)       // Pause button clicked
+        {
+            if(pauseBool == false)
+            {
+                pauseBool = true;
+            }else
+            {
+                pauseBool = true;
+            }
 
         }
     }
