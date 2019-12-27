@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>Лабораторная Работа№4</title>
+<script>
+var counter = 1;
+function create(n)
+{
+	if (n != "")
+	{
+		var li = document.createElement("li");
+		li.innerHTML = n;
+		li.id = counter;
+		counter++;
+		document.getElementById('list').appendChild(li);
+	}
+}
+
+function find(n)
+{
+	if (n != "")
+	{
+		for (i = 1; i < counter; i++)
+		{
+			if(n == document.getElementById(i).innerHTML)
+			alert("Совпадение по элементу " + document.getElementById(i).id)
+		}
+	}
+}
+
+</script>
+</head>
+<body>
+	<div style="width : 285px; word-wrap : normal">
+		Реализовать следующие функции: После нажатия на кнопку "Добавить" должен добавиться новый элемент списка, введёный пользователем в поле<br>
+		После нажатия на кнопку "Найти" нужно найти элемент спика совпадающий со значением введёном в поле и его индекс нужно вывести в сообщении
+	</div>
+	<ol id="list">
+	</ol>
+	<input id="inp" type="text">
+	<button onclick="create(inp.value)">Добавить</button>
+	<button onclick="find(inp.value)">Найти</button>	
+</body>
+</html>

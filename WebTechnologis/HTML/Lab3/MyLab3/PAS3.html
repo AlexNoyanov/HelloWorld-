@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="utf-8">
+
+<title>Лабораторная №3</title>
+
+<script type="text/javascript">
+
+function Check (str)
+{
+var s = str.value;
+ if (s.length > 10) 
+ {
+ alert('Строка длиннее 10 символов');
+ }
+ 
+
+else
+  {
+ 
+if ((s[0]>= 'А' && s[0]<='Я')|| s[0]=='Ё' || (s[0]>= 'A' && s[0]<='Z'))
+ 
+	{
+          alert('Строка начинается с заглавной буквы');
+        
+} 
+
+ else
+        {
+ 
+         var f = true;
+ 
+         for (var i = 0; i < s.length; i++)
+           {
+ 
+	    if(s[i] == '!' || s[i] == '%' || s[i] == '.' || s[i] == '*' || s[i] == '-' || s[i] == '#')
+             {
+ 
+	    f = false;
+ 
+	    break;
+ 
+	     }
+        
+   } 
+           
+
+if (f=false)
+
+	   {
+ 
+		alert('В строке присутствуют запрещенные символы');
+ 
+
+	   } 
+           else
+ 
+	   {
+ 
+		alert('Все проверки прошли успешно');
+           }
+ 
+       }
+  
+
+}
+
+}
+
+
+
+</script>
+
+</head>
+
+<body>
+
+<b>
+
+<font size="4">
+	Реализовать проверку строки
+<br>
+	на выполнение следущих условий:
+<br>    1. Отсутствие запрещенных символов: ! % . * - #
+<br>
+	2. Строка не должна начинаться с заглавной буквы
+<br>
+	3. Строка не должна быть длиннее 10 символов
+<br>
+	Результат проверки вывести в сообщение
+<br>
+	через 3 сек после отправки данных
+<br>
+
+</font>
+
+</b>
+
+<br>
+	<form action="" method="post" name="test" id="form">
+
+<input type="text" name="str">
+<input type="button" name="button1" onclick="setTimeout(Check, 3000,str)" value="Проверить строку">
+
+</form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <title>Oleg Lab4</title>
+            
+            <!-- JavaScript for this page -->
+            <script type="text/javascript">
+                
+                var listCounter = 1; // Counting number of elements
+                
+                var lastBtn = document.createElement("BUTTON"); ;
+            
+            function addButton(){
+                var btn = document.createElement("BUTTON");   // Create a <button> element
+                btn.innerHTML = "Кнопка номер " + listCounter;
+              //  btn.id = listCounter;
+                //document.body.appendChild(btn);
+                //element.innerHTML = lastBtn;
+                
+                 document.getElementById('elementsList').appendChild(btn);
+                // listCounter++;
+                 
+                 
+                 var element = document.createElement("li"); // Element 'li' for the list
+                 
+                 element.innerHTML = "";
+                 element.id = listCounter;
+                 listCounter++;                              // Calculating number of elements
+                 
+                 document.getElementById('elementsList').appendChild(element);
+                 
+            }
+            
+           
+           function deleteButton()
+           {
+               var list = document.getElementById("elementsList");   // Get the <ul> element with id="myList"
+               list.removeChild(list.childNodes[listCounter]);
+                list.removeChild(list.childNodes[listCounter-1]);           // Remove
+               listCounter--;
+           }
+           
+            </script>
+            </head>
+    
+    <body>
+        <!-- Lab work decsription: -->
+        Реализовать следующие функции:
+        <br>
+        После нажатия на кнопку "Добавить"
+        <br>
+        должен добавиться новый элемент списка,
+        <br>
+        введенный пользователем в поле
+        <br>
+        После нажатия на кнопку "Найти" нужно
+        <br>
+        найти элемент списка, совпадающий
+        <br>
+        со значением, ввденным в поле и его
+        <br>
+        индекс нужно вывести в сообщении
+        <br>
+        
+        <!-- Ordered list of all inputs:-->
+        <ol id="elementsList">
+        
+        </ol>
+        
+            <!-- Buttons to find and add the element -->
+ 
+             <button onclick="addButton()"> Добавить button</button>
+             <button onclick="deleteButton()"> Удалить button</button>
+            
+            </body>
+</html>
+

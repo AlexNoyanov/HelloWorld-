@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- For Russian language: -->
+        <meta charset="utf-8">
+                <!-- Page title -->
+            <title>Noyanov Lab3</title>
+            <!-- JavaScript code: -->
+            <script type="text/javascript">
+                
+                // Fucntion for checking string:
+                function StrCheck(str)
+                {
+                    var symbols = str.value;     // Getting the string
+                    
+                    // Now checking for three rules:
+                    if (symbols.length > 10){    // Checking for length
+                        alert('Строка длиннее, чем 10 символов!\nПопробуйте снова');  // Printing message with length error
+                    }else{
+                        if ((symbols[0] >= 'А' && symbols[0]<='Я') || symbols[0]=='Ё' || (symbols[0] >= 'A' &&
+                             symbols[0] <= 'Z'))    // Checking for upper case
+                        {
+                            alert('Строка начинается с заглавной буквы!\nПопробуйте снова');
+                        }else{
+                            // Now checking other two rules:
+                            var flag = false;     // Flag turned off
+                            for (var i = 0; i < symbols.length; i++)  // Checking all symbols in string:
+                            {
+                                if(symbols[i] == '!' || symbols[i] == '%' || symbols[i] == '.'
+                                || symbols[i] == '*' || symbols[i] == '-' || symbols[i] == '#'){
+                                    flag = true; // Get the flag on
+                                    //alert('В строке есть запрещенные символы!');
+                                    break;
+                                }
+                            }
+                            
+                            if(flag){
+                                alert('В строке есть запрещенные символы!\nПопробуйте снова');
+                            }else{ // If everything is ok:
+                            alert('Строка прошла все проверки!');
+                            }
+                        }
+                    }
+                }
+            // === End of the script ===
+                </script>
+    </head>
+    
+    <body>
+        <b>
+            <!-- Text on the page: -->
+            <h2 style ="font-size: 30px"> <!-- Text style with CSS-->
+        
+            Реализовать проверку строки
+                <br>
+            на выполнение следущих условий:
+         <br> 1. Отсутствие запрещенных символов: ! % . * - #
+         <br>
+             2. Строка не должна начинаться с заглавной буквы
+         <br>
+             3. Строка не должна быть длиннее 10 символов
+         <br>
+             Результат проверки вывести в сообщение
+         <br>
+             через 3 сек после отправки данных
+         <br>
+     </b>
+        <br>
+    </h2>
+    
+        <!-- Data input form for text field: -->
+        <form action= "" method="post" name="DataTest" id="formData">
+            
+            <input type="text" name="Fieldstr"><!-- Text field -->
+                <!-- Button callig function with 3sec delay: -->
+                <input type="button" name="button1" onclick="setTimeout(StrCheck, 3000,Fieldstr)" value="Проверить строку"
+                    style = "border-radius: 0px;"> <!-- Button style with CSS -->
+                    
+        </form>
+    
+    </body>
+    
+</html>
+
+
+

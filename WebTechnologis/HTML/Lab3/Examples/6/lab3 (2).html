@@ -1,0 +1,85 @@
+<html>
+<head>
+<SCRIPT [language="JavaScript"]>
+function prov1(var_obj) {
+    var g;
+    var n;
+    var f;
+    var p;
+    var o;
+    g=document.getElementById("prm1").value
+    n=document.getElementById("prm2").value
+    f=document.getElementById("prm3").value
+    p=document.getElementById("prm4").value
+    o=document.getElementById("prm5").value
+    if( (g=='') || (n=='') || (f=='') || (p=='') || (o==''))  {
+    window.alert("Не все поля заполнены");
+    return false;
+    }
+    if ((n<1) || (n>30) || isNaN(n)==true)
+    {
+    window.alert("Некорректный номер в журнале");
+    return false;
+    }
+} 
+</SCRIPT> 
+<style>
+   p {
+    margin-bottom: 0.01em;
+   }
+  </style>
+  
+</head>
+<body>
+<table border=1 cellspacing="0" width=50% cellpadding="15">
+<form action=http://193.233.69.42:15980/testvvk/test_control.php name=prm20 method=post onsubmit="return prov1()">
+
+
+<tr>
+
+<td colspan="2">
+<p> Группа <input name=prm1 id="prm1" type="text" syze = 25>
+n/n в журнале: <input name=prm2 id="prm2" type="text" syze = 20> </p>
+<p> ФИО (name): <input name=prm3 id="prm3" type="text" syze = 100> </p>
+
+
+<p>Предмет: <br>
+<select name=prm4 id="prm4" size=5>
+<option value=r>Русский
+<option value=m>Математика
+<option value=ti>Технологии интернета 
+<option value=f>Физика
+<option value=vs>Вычислительные сети
+</select> </p> 
+
+<p>Оценка: <br>
+<select name=prm5 id="prm5" size=4>
+<option value=o>Отлично
+<option value=h>Хорошо
+<option value=u>Удовлетворительно
+<option value=nu>Неудовлетворительно
+</select> </p>
+</td>
+
+</tr>
+
+<tr>
+
+<td align = center>
+<input type=submit value=Отправить onClick="prov1();">
+</td>
+
+<td align = center>
+<input type=reset value=Очистить>
+</td>
+
+</tr>
+
+
+
+
+</form>
+<table>
+</body>
+
+</html>

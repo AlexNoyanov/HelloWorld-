@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <title>Noyanov Lab4</title>
+            
+        <!-- JavaScript for this page -->
+        <script type="text/javascript">
+
+        var listCounter = 1; // Counting number of elements 
+
+    // Fubnction to add new element 'li' to the ordered list
+        function addToList(newElem)
+        {
+            if (newElem != "")
+            {
+                var element = document.createElement("li"); // Element 'li' for the list
+
+                element.innerHTML = newElem;
+                element.id = listCounter;   
+                listCounter++;                              // Calculating number of elements
+
+                document.getElementById('elementsList').appendChild(element);
+            }
+        }
+
+    // Function to find elemnt in the ordered list and print the message
+        function findElement(elem)     
+            {
+                if (elem != "") // Find element only if it is not empty         
+                {
+                    for (i = 1; i < listCounter; i++)   // Seraching in the list
+                    {
+                        // If element is correct:
+                        if(elem == document.getElementById(i).innerHTML)                           
+                            alert("Совпадение по элементу " + document.getElementById(i).id)    // Print message with number in the list
+                    }
+                }
+            }
+     </script>
+    </head>
+    
+    <body>
+      <!-- Lab work decsription: -->
+            Реализовать следующие функции:
+            <br>
+            После нажатия на кнопку "Добавить"
+            <br>
+            должен добавиться новый элемент списка,
+            <br>
+            введенный пользователем в поле 
+            <br>
+            После нажатия на кнопку "Найти" нужно 
+            <br>
+            найти элемент списка, совпадающий 
+            <br>
+            со значением, ввденным в поле и его 
+            <br>
+            индекс нужно вывести в сообщении
+            <br>
+
+<!-- Ordered list of all inputs:-->
+    <ol id="elementsList">
+    </ol>
+
+<!-- Text field to input the data: -->
+    <input id="inputText" type="text">
+
+<!-- Buttons to find and add the element -->
+    <button onclick="addToList(inputText.value)"> Добавить </button>
+    <button onclick="findElement(inputText.value)"> Найти </button>    
+
+    </body>
+</html>

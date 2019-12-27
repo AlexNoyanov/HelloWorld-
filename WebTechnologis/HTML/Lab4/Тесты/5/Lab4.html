@@ -1,0 +1,47 @@
+<html>
+        <head>
+            <script [language="JavaScript"]>
+            function add(){
+                var dv=document.getElementById("list");
+                var l=document.createElement("LI");
+                var txt=document.getElementById("txt").value;
+                var arr=document.getElementsByTagName("li");
+                l.innerHTML=txt;
+                if (arr.length==0){
+                    l.style.fontSize ='20px';
+                }else
+                {
+                    var parhigh=parseInt(arr[arr.length-1].style.fontSize,10)+2;
+                    l.style.fontSize =parhigh+'px';
+                }
+                dv.appendChild(l);
+            }
+            
+            function del(){
+                var arr=document.getElementsByTagName("li");
+                var lastl=arr[arr.length-1];
+                lastl.parentNode.removeChild(lastl);
+            }
+            </script>
+        </head>
+    
+    
+        <body>
+            <form>
+                Реализовать следующие функции: <br>
+                После нажатия на кнопку "Добавить" <br>
+                должен добавиться новый элемент списка, <br>
+                введенный пользователем в поле <br>
+                После нажатия на кнопку "Удалить" <br>
+                должен удалиться последний элемент списка, <br>
+                Каждый новый элемент списка должен отличаться <br>
+                большим кеглем от предыдущего  <br>
+                <OL id="list"></OL>
+                <input type="text" id="txt">
+                <input type="button" value="Добавить" onclick="add()">
+                <br>
+                <input type="button" value="Удалить" onclick="del()">
+            </form>
+        </body>
+
+</html> 

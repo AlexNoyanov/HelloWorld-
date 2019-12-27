@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <title>Noyanov Lab3</title>
+            
+            <!-- JavaScript code here:-->
+            <script [language="JavaScript"]>
+                
+                // Function f1:
+                function f1(){
+                    var x1 = 2;
+                    var x2 = 3;
+                    var v1 = document.getElementbyId("textField1").value;
+                    var v2 = document.getElementById("field2");
+                    
+                    var chatinput = document.getElementById("textField1").value;
+                    if (chatinput == "" || chatinput.length == 0 || chatinput == null)
+                    {
+                        // Invalid... Box is empty
+                        alert("Не все заполнено, попробуйте снова");
+                        return false;
+                    }
+                    
+                    // Checking if all fields filled:
+                    if((v1.checked)&& v2.checked){
+                        alert("Заполнены все поля на странице");
+                        return true;
+                    }else{
+                        alert("Не все заполнено, попробуйте снова");
+                        return false;
+                    }
+                }
+
+            </script>
+    </head>
+    
+    <body>
+        <!-- Data input form -->
+        <form name = "inputform1" action = "" method = POST onsubmit = "f1">
+            <!-- Table for data input:-->
+            <TABLE border = 1 align = "CENTER" cellspacing = 0 cellpading = 7>
+             <tr>
+                <td align = right> Фамилия имя отчество</td>
+                <td ><INPUT type=text name=prm1 id="textField1"></td>
+             </tr>
+             <tr >
+                 <td align=right rowspan=2>Пол</td> <!-- Two rows together -->
+                 <td ><INPUT type=radio name=prm2 value="Женский" id="field2">женский
+                 </td>
+              </tr>
+              <tr >
+                 
+                 <td ><INPUT type=radio name=prm2 value="Мужской" id="p3">мужской</td>
+             </tr>
+            
+            <tr >
+                <td align="center "><input type=submit value=Отправить  action="JavaScript:f1()"></td>
+                    <td align=center><input type=reset value="Восстановить"></td>
+                    </tr>
+                    
+                    </table>
+            
+        </form>
+    </body>

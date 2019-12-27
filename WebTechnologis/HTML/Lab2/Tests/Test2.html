@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Sample document</title>
+  
+  <link rel="stylesheet" href="Style2.css">
+  
+  </head>
+
+  <body>
+    <p align = "left">
+    <!-- Заголовок -->
+    <H1>
+        <div>
+            Введите данные
+            </div>
+    </H1>
+    <H3>
+         Имя
+        </H3>
+    <!-- Поля ввода -->
+    <form name="input" action="" method="get">   <!-- action- Адрес, куда отправлять
+        method-get или post                         -->
+        <input  type = 'text' value = 'Ваше имя' >
+        </input>
+        </form>
+    
+    </p>
+      <!--  Кнопка  в центре-->
+    <p align = "center">
+    <input  type = 'submit' value = 'Подтвердить' >
+                       </input>
+    <input type="submit" value="Отправить" onclick="alert('click')"> </input>
+     <input type="submit" value="Google" method="get" onClick='location.href="http://google.com/"'> </input>
+         
+         <form onsubmit="
+             alert('submit!');
+             
+             return false">
+             Первый пример: нажмите Enter: <input type="text" value="Текст"><br>
+             Второй пример: нажмите на кнопку "Отправить": <input type="submit" value="Отправить">
+             </form>
+         </p>
+    
+    </body>
+</html>

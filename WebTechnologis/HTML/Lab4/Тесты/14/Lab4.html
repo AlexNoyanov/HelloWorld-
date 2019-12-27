@@ -1,0 +1,54 @@
+<html>
+  <head>
+	<title>Часы</title>
+	<meta http-equiv = "Content-Type" content = "text/html; charset = utf-8" >
+	<link rel = "stylesheet" type = "text/css" href = "style.css">
+	 <script >
+   function Chec()
+   {
+   var s =document.getElementbyId("select1");
+   var a =document.getElementbyId("select1");
+   var v = s.value;
+   var a=document.getElementbyId("arrow")
+   if (v==1) {document.getElementbyId("arrow").style.transform='rotate(30deg)'}
+    if (v==2) {document.getElementbyId("arrow").style.transform='rotate(60deg)'}
+     if (v==3) {document.getElementbyId("arrow").style.transform='rotate(90deg)'}
+      if (v==4) {document.getElementbyId("arrow").style.transform='rotate(120deg)'}
+       if (v==5) {document.getElementbyId("arrow").style.transform='rotate(150deg)'}
+        if (v==6) {document.getElementbyId("arrow").style.transform='rotate(180deg)'}
+         if (v==7) {document.getElementbyId("arrow").style.transform='rotate(210deg)'}
+          if (v==8) {document.getElementbyId("arrow").style.transform='rotate(240deg)'}
+           if (v==9) {document.getElementbyId("arrow").style.transform='rotate(270deg)'}
+            if (v==10) {document.getElementbyId("arrow").style.transform='rotate(300deg)'}
+             if (v==11) {document.getElementbyId("arrow").style.transform='rotate(330deg)'}
+              if (v==12) {document.getElementbyId("arrow").style.transform='rotate(360deg)'}
+                
+   }
+   </script>
+  </head>	
+  <body>
+  <form> 
+   <p align="center">
+    <img src="clock_face.jpg" id="topHat" 
+    style="possition:absolute; top:15px; left: 15 xp;"/>
+    <br /><br />
+     <p align="center">
+    <img src="arrow.jpg" id="arrow" style=" position: absolute;top:180; left: 370 p; opacity: 1;"/>
+    <select stye="position: absolute; top: 650 px; left 300px" id="select1">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    </select>
+    <input type="button" style="position: absolute; top:650 px;left: 340px" value="Установить время на заданный час" onClick="Chec()">
+   </p>
+  </body>
+</html>
